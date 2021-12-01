@@ -1,4 +1,4 @@
-# My First PyGame, Sophia Rentas, 12/1/21 1:55, v0.8
+# My First PyGame, Sophia Rentas, 12/1/21 2:00, v0.9
 
 import pygame, sys
 from pygame.locals import *
@@ -37,3 +37,6 @@ pygame.draw.polygon(windowSurface, GREEN, ((146,0), (291,106), (236,277), (56,27
 pyagme.draw.line(windowSUrface, BLUE, (60,60),(120,60), 4)
 pyagme.draw.line(windowSUrface, GREEN, (50,40),(100,40), 6)
 pyagme.draw.line(windowSUrface, WHITE, (236,82),(236,82), 9)
+
+# Draw a circle.
+pygame.draw.circle(windowSurface, BLACK, (300,50), 20,0)
