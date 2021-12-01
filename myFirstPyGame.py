@@ -1,4 +1,4 @@
-# My First PyGame, Sophia Rentas, 12/1/21 2:07, v0.11
+# My First PyGame, Sophia Rentas, 12/1/21 2:21, v0.13
 
 import pygame, sys
 from pygame.locals import *
@@ -34,9 +34,9 @@ windowSurface.fill(VELVET)
 pygame.draw.polygon(windowSurface, GREEN, ((146,0), (291,106), (236,277), (56,277), (0,106)))
 
 # Draw lines on the screen.
-pyagme.draw.line(windowSUrface, BLUE, (60,60),(120,60), 4)
-pyagme.draw.line(windowSUrface, GREEN, (50,40),(100,40), 6)
-pyagme.draw.line(windowSUrface, WHITE, (236,82),(236,82), 9)
+pygame.draw.line(windowSurface, BLUE, (60,60),(120,60), 4)
+pygame.draw.line(windowSurface, GREEN, (50,40),(100,40), 6)
+pygame.draw.line(windowSurface, WHITE, (236,82),(236,82), 9)
 
 # Draw a circle.
 pygame.draw.circle(windowSurface, BLACK, (300,50), 20,0)
@@ -46,3 +46,21 @@ pygame.draw.ellipse(windowSurface, RED, (300,250,40,80), 1)
 
 # Draw the text rectangle.
 pygame.draw.rect(windowSurface, GREEN, (textRect.left - 20, textRect.top - 20, textRect.width + 40, textRect.height + 40))
+
+# Create Pixel Array
+pixArray = pygame.PixelArray(windowSurface)
+pixArray[480][380] = BLUE
+del pixArray
+
+# Draw the text onto the surface.
+windowSurface.blit(text, textRect)
+
+# Update PyGame Display
+pygame.display.update()
+
+# Run game loop.
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
