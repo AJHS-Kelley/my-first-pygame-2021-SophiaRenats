@@ -31,12 +31,12 @@ textRect.centery = windowSurface.get_rect().centery
 windowSurface.fill(VELVET)
 
 # Draw a polygon onto the screen.
-pygame.draw.polygon(windowSurface, GREEN, ((146,0), (291,106), (236,277), (56,277), (0,106)))
+pygame.draw.polygon(windowSurface, WHITE, ((146,0), (291,106), (236,277), (56,277), (0,106)))
 
 # Draw lines on the screen.
 pygame.draw.line(windowSurface, BLUE, (60,60),(120,60), 4)
 pygame.draw.line(windowSurface, GREEN, (50,40),(100,40), 6)
-pygame.draw.line(windowSurface, WHITE, (236,82),(236,82), 9)
+pygame.draw.line(windowSurface, RED, (236,82),(236,82), 9)
 
 # Draw a circle.
 pygame.draw.circle(windowSurface, BLACK, (300,50), 20,0)
