@@ -1,4 +1,4 @@
-# Simple Animation with PyGame, Sophia Rentas, 1/11/22, 1:57pm, v0.9
+# Simple Animation with PyGame, Sophia Rentas, 1/11/22, 2:37pm, v0.10
 
 
 import pygame, sys, time
@@ -75,7 +75,7 @@ while True:
             if b['dir'] == DOWNLEFT:
                 b['dir'] = DOWNRIGHT
             if b['dir'] == UPLEFT:
-                b['dir'] == UPRIGHT
+                b['dir'] = UPRIGHT
         if b['rect'].right > WINDOWWIDTH:
                 #The box has moved past the right.
             if b['dir'] == DOWNRIGHT:
