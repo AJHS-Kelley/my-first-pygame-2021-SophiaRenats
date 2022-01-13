@@ -1,4 +1,4 @@
-# PyGame Collision Detection Practice, Sophia Rentas, January 13, 2022, 10:29am, v0.3
+# PyGame Collision Detection Practice, Sophia Rentas, January 13, 2022, 10:41am, v0.4
 
 import pygame, sys, random
 from pygame.locals import
@@ -17,4 +17,15 @@ pygame.display.set_caption ('Collision Detection 2022')
 BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
 WHITE = (255, 255, 255)
+
+# Setup the player and food data structures.
+foodCounter = 0
+NEWFOOD = 40
+FOODSIZE = 20
+player = pygame.Rect(300, 100, 50, 50)
+foods = []
+
+for i in ranger(20):
+    foods.append(pyagme.Rect(random.randint(0, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE), FOODSSIZE, FOODSIZE))
+
 
