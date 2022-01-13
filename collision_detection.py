@@ -1,7 +1,7 @@
-# PyGame Collision Detection Practice, Sophia Rentas, January 13, 2022, 2:20pm, v1.1a
+# PyGame Collision Detection Practice, Sophia Rentas, January 13, 2022, 2:36pm, v2.0
 
 import pygame, sys, random
-from pygame.locals import
+from pygame.locals import *
 
 # Setup PyGame
 pygame.init()
@@ -10,7 +10,7 @@ mainClock = pygame.time.Clock()
 # Setup the PyGame Window
 WINDOWWIDTH = 400
 WINDOWHEIGHT = 400
-windowSurface = pygame.disply.set_model((WINDOWWIDTH, WINDOWHEIGHT), 0, 32)
+windowSurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT), 0, 32)
 pygame.display.set_caption ('Collision Detection 2022')
 
 # Setup colors.
@@ -25,8 +25,8 @@ FOODSIZE = 20
 player = pygame.Rect(300, 100, 50, 50)
 foods = []
 
-for i in ranger(20):
-    foods.append(pyagme.Rect(random.randint(0, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE), FOODSSIZE, FOODSIZE))
+for i in range(20):
+    foods.append(pygame.Rect(random.randint(0, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE), FOODSIZE, FOODSIZE))
 
 # Movement Variables
 moveLeft = False
@@ -51,12 +51,12 @@ while True:
             if event.key == K_RIGHT or event.key == K_d:
                 moveLeft = False
                 moveRight = True
-            if event.key == K-UP or event key == K_w:
+            if event.key == K_UP or event.key == K_w:
                 moveDown = False
                 moveUp = True
             if event.key == K_DOWN or event.key == K_s:
                 moveUp = False
-                movedown + True
+                movedown = True
         if event.type == KEYUP:
             if event.key == K_ESCAPE:
                 pygame.quit()
@@ -66,7 +66,7 @@ while True:
                 moveLeft = False
             if event.key == K_RIGHT or event.key == K_d:
                moveRight = False 
-            if event.key == K-UP or event key == K_w:
+            if event.key == K_UP or event.key == K_w:
                 moveUp = False
             if event.key == K_DOWN or event.key == K_s:
                moveDown = False
@@ -75,13 +75,13 @@ while True:
                 player.left = random.randint(0, WINDOWWIDTH - player.width)
 
         if event.type == MOUSEBUTTONUP:
-            foods.append(pygame.Rect(event.pos[0], event.pos[1]), FOODSIZE, FOODSIZE))
+            foods.append(pygame.Rect(event.pos[0], event.pos[1], FOODSIZE, FOODSIZE))
 
     foodCounter += 1
     if foodCounter >= NEWFOOD:
         # Add new food.
         foodCounter = 0
-        foods.append(pygame.Rect(random.randint(o, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE), FOODSIZE, FOODSIZE))
+        foods.append(pygame.Rect(random.randint(0, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE), FOODSIZE, FOODSIZE))
 
     # Draw white background on Window Surface.
     windowSurface.fill(WHITE)
@@ -100,15 +100,17 @@ while True:
     pygame.draw.rect(windowSurface, BLACK, player)
 
     # Check for player colliding with food(s)
-    for food in food[:]:
-        if player.collide.rect(food):
+    for food in foods[:]:
+        if player.colliderect(food):
             foods.remove(food)
 
     # Draw the food.
     for i in range(len(foods)):
         pygame.draw.rect(windowSurface, GREEN, foods[i])
 
-
+    # Draw the window to the creen.
+    pygame.display.update()
+    mainClock.tick(40)    
 
 
 
