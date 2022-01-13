@@ -1,4 +1,4 @@
-# PyGame Collision Detection Practice, Sophia Rentas, January 13, 2022, 2:08pm, v1.0
+# PyGame Collision Detection Practice, Sophia Rentas, January 13, 2022, 2:15pm, v1.1
 
 import pygame, sys, random
 from pygame.locals import
@@ -98,6 +98,16 @@ while True:
 
     # Draw the player on the surface.
     pygame.draw.rect(windowSurface, BLACK, player)
+
+    # Check for player colliding with food(s)
+    for food in food[:]:
+        if player.collide.rect(food):
+            foods.remove(food)
+
+    # Draw the food.
+    for i in range(len(foods)):
+        pygame.draw.rect(windowSurface, GREEN, foods[i])
+
 
 
 
