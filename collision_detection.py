@@ -1,4 +1,4 @@
-# PyGame Collision Detection Practice, Sophia Rentas, January 13, 2022, 2:36pm, v2.0
+# PyGame Collision Detection Practice, Sophia Rentas, January 13, 2022, 2:41pm, v2.0a
 
 import pygame, sys, random
 from pygame.locals import *
@@ -56,7 +56,7 @@ while True:
                 moveUp = True
             if event.key == K_DOWN or event.key == K_s:
                 moveUp = False
-                movedown = True
+                moveDown = True
         if event.type == KEYUP:
             if event.key == K_ESCAPE:
                 pygame.quit()
